@@ -1,0 +1,50 @@
+import numpy as np
+from scipy.stats import kendalltau
+
+
+def kendall_tau_with_n_lags(x, y, n_lags):
+  """Computes the Kendall tau correlation coefficient between two time series with n lags.
+
+  Args:
+    x: A NumPy array containing the first time series.
+    y: A NumPy array containing the second time series.
+    n_lags: An integer representing the number of lags to test.
+
+  Returns:
+    A NumPy array containing the Kendall tau correlation coefficients for each lag.
+  """
+
+  kendall_tau_correlations = np.zeros(n_lags)
+  kendall_tau_p_values = np.zeros(n_lags)
+
+  for lag in range(n_lags):
+    kendall_tau_correlation, p_value = kendalltau(x[lag:], y[:-lag])
+    kendall_tau_correlations[lag] = kendall_tau_correlation
+    kendall_tau_p_values[lag] = p_value
+
+  return kendall_tau_correlations, kendall_tau_p_values
+
+
+def print_kendall_tau_with_n_lags(x, y, n_lags):
+  """Prints the Kendall tau correlation coefficient between two time series with n lags, with p-value added.
+
+  Args:
+    x: A NumPy array containing the first time series.
+    y: A NumPy array containing the second time series.
+    n_lags: An integer representing the number of lags to test.
+  """
+
+  kendall_tau_correlations, kendall_tau_p_values = kendall_tau_with_n_lags(x, y, n_lags)
+
+  print("Kendall tau correlation coefficients with n lags:")
+  for lag, kendall_tau_correlation, kendall_tau_p_value in zip(range(n_lags), kendall_tau_correlations, kendall_tau_p_values):
+    print(f"Lag {lag}: {kendall_tau_correlation:.4f}, p-value: {kendall_tau_p_value:.4f}")
+
+
+if __name__ == "__main__":
+  x = np.array([1, 2, 3, 4, 5])
+  y = np.array([2, 4, 6, 8, 10])
+  n_lags = 3
+
+  print_kendall_tau_with_n_lags(x, y, n_lags)
+
