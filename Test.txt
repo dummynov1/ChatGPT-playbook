@@ -1,1 +1,6 @@
 
+Overfitting
+When a model is trained on too little data, it can't generalize and may memorize the noise in the data. This can cause the model to perform well on the training data but poorly on new data.
+Underfitting
+When a model is trained on too little data, it may not be complex enough to learn the underlying patterns in the data. This can cause the model to perform poorly on both the training data and new data. 
+ 
