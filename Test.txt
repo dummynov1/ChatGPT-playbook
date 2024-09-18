@@ -4,3 +4,25 @@ When a model is trained on too little data, it can't generalize and may memorize
 Underfitting
 When a model is trained on too little data, it may not be complex enough to learn the underlying patterns in the data. This can cause the model to perform poorly on both the training data and new data. 
  
+
+ When using a regression model with limited data, the primary pitfall is a lack of statistical power, meaning the model may not accurately capture the true relationship between variables due to insufficient data points, leading to unreliable predictions and potentially misleading interpretations of the results, including large standard errors and difficulty detecting significant associations between variables. 
+ 
+Key issues arising from having less data in a regression model: 
+ 
+High Variance:
+With fewer data points, the model is more susceptible to capturing random noise in the data, leading to high variance in the estimated coefficients, making predictions less reliable. 
+ 
+Overfitting:
+A model with limited data can easily overfit to the training data, meaning it captures the specific noise in the small sample rather than the underlying pattern, resulting in poor performance on new data. 
+ 
+Inaccurate Confidence Intervals:
+Due to the smaller sample size, the confidence intervals around the regression coefficients will be wider, indicating a greater degree of uncertainty about the true population parameters. 
+ 
+Difficulty Detecting Non-linear Relationships:
+With limited data, it can be challenging to identify non-linear patterns in the relationship between variables, potentially leading to a misinterpretation of the data if a linear model is assumed. 
+ 
+Sensitivity to Outliers:
+Outliers can have a larger impact on the regression line when the data set is small, potentially skewing the results significantly. 
+ 
+Limited Generalizability:
+A model built on a small dataset may not generalize well to a broader population, as the sample may not be representative of the whole group. 
