@@ -26,3 +26,11 @@ Outliers can have a larger impact on the regression line when the data set is sm
  
 Limited Generalizability:
 A model built on a small dataset may not generalize well to a broader population, as the sample may not be representative of the whole group. 
+
+
+
+Class Imbalance: Models may favor majority classes, leading to poor performance on minority classes.
+Overfitting: Models might memorize training data rather than generalizing, especially with multiple classes.
+Poor Feature Representation: Limited data can hinder the model's ability to distinguish between classes.
+Misleading Evaluation Metrics: Accuracy can be deceptive; use precision, recall, and F1-score for better insights.
+Ambiguous Labels: Overlapping class definitions can confuse the model and reduce performance.
